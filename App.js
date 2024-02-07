@@ -19,11 +19,11 @@ export default function App(){
 
     <View style={estilos.main}>
     <Text>Conteúdo...</Text>
+    <Button title="Lá nele" onPress={vai} />
     </View>
 
     <View style={estilos.footer}>
     <Text>Footer</Text>
-    <Button title="Lá nele" onPress={vai} />
     </View>
 
     </SafeAreaView>
@@ -36,12 +36,21 @@ const estilos = StyleSheet.create({
   container: {
     backgroundColor: "white",
     flex: 1,
+    // justifyContent: "space-between",
   },
   header: {
-    backgroundColor: "#2b2b2b"
+    backgroundColor: "#2b2b2b",
+    flex: 1
   },
   texto: {
     color: "white",
+  },
+  main: {
+    backgroundColor: "yellow",
     flex: 5
   },
+  footer: {
+    backgroundColor: "lightgreen",
+    flex: 1
+  }
 })
