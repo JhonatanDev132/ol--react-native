@@ -1,5 +1,6 @@
 import { StatusBar, View, Text, Button, Alert } from "react-native";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
+
 
 export default function App(){
   const vai = () => {
@@ -8,19 +9,19 @@ export default function App(){
 
   return (
     <>
-    <SafeAreaView>
+    <SafeAreaView style={estilos.container}>
 
     <StatusBar barStyle="default" />
     
-    <View>
-    <Text>Topo/Cabeçalho</Text>
+    <View style={estilos.header}>
+    <Text style={estilos.texto}>Topo/Cabeçalho</Text>
     </View>
 
-    <View>
+    <View style={estilos.main}>
     <Text>Conteúdo...</Text>
     </View>
 
-    <View>
+    <View style={estilos.footer}>
     <Text>Footer</Text>
     <Button title="Lá nele" onPress={vai} />
     </View>
@@ -30,3 +31,17 @@ export default function App(){
 
   )  
 }
+
+const estilos = StyleSheet.create({
+  container: {
+    backgroundColor: "white",
+    flex: 1,
+  },
+  header: {
+    backgroundColor: "#2b2b2b"
+  },
+  texto: {
+    color: "white",
+    flex: 5
+  },
+})
