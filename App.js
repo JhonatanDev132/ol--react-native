@@ -1,6 +1,6 @@
-import { StatusBar, View, Text, Button, Alert } from "react-native";
-import { SafeAreaView, StyleSheet } from "react-native";
-
+import { StatusBar, View, Text, Alert, Pressable } from "react-native";
+import { SafeAreaView } from "react-native";
+import estilos from "./src/stylesheet/estilos";
 
 export default function App(){
   const vai = () => {
@@ -14,16 +14,18 @@ export default function App(){
     <StatusBar barStyle="default" />
     
     <View style={estilos.header}>
-    <Text style={estilos.texto}>Topo/Cabeçalho</Text>
+    <Text style={estilos.texto}>Olá Native</Text>
     </View>
 
     <View style={estilos.main}>
-    <Text>Conteúdo...</Text>
-    <Button title="Lá nele" onPress={vai} />
+    <Text style={estilos.textoMain}>Conteúdo</Text>
+    <Pressable style={estilos.buttonMain} onPress={vai}>
+      <Text style={estilos.textoPressable}>Lá nele</Text>
+    </Pressable>
     </View>
 
     <View style={estilos.footer}>
-    <Text>Footer</Text>
+    <Text style={estilos.textoFooter}>Footer</Text>
     </View>
 
     </SafeAreaView>
@@ -31,26 +33,3 @@ export default function App(){
 
   )  
 }
-
-const estilos = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-    flex: 1,
-    // justifyContent: "space-between",
-  },
-  header: {
-    backgroundColor: "#2b2b2b",
-    flex: 1
-  },
-  texto: {
-    color: "white",
-  },
-  main: {
-    backgroundColor: "yellow",
-    flex: 5
-  },
-  footer: {
-    backgroundColor: "lightgreen",
-    flex: 1
-  }
-})
